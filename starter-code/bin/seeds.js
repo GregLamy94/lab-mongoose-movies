@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Celebrity = require("../models/celebrity.js");
+const Celebrity = require("../models/Celebrity.js");
 
 const dbName = "lab-mongoose-movies";
 // connection à la db
