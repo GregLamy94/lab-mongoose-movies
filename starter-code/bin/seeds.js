@@ -4,6 +4,8 @@ const Celebrity = require("../models/Celebrity.js");
 const dbName = "lab-mongoose-movies";
 // connection à la db
 
+Celebrity.collection.drop();
+
 mongoose
   .connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true })
   .then(x => {
