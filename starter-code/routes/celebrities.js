@@ -33,6 +33,17 @@ router.post("/new", function(req, res, next) {
     .catch(() => res.redirect("/celebrities/new"));
 });
 
+router.post("/:id/delete", function(req, res, next) {
+  Celebrity.deleteOne({
+    _id: req.params.id
+  })
+    .then(() => {
+      console.log("Celebrity deleted");
+      res.redirect("/celebrities");
+    })
+    .catch(err => next(err));
+});
+
 router.get("/:id", function(req, res, next) {
   Celebrity.findOne({ _id: req.params.id })
     .then(data => {
